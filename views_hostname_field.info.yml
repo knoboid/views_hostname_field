@@ -1,0 +1,7 @@
+name: 'Views Hostname Field'
+type: module
+description: 'Provides a views field that displays the hostname from the current session.'
+core: 8.x
+package: 'views'
+dependencies:
+  - drupal:views

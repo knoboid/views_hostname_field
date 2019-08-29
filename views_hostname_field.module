@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains views_hostname_field.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function views_hostname_field_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the views_hostname_field module.
+    case 'help.page.views_hostname_field':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a views field that displays the hostname from the current session.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function views_hostname_field_theme() {
+  return [
+    'views_hostname_field' => [
+      'render element' => 'children',
+    ],
+  ];
+}
